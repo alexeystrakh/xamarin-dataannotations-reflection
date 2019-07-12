@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Xamarin.DataAnnotationsReflection"
+             mc:Ignorable="d"
+             x:Class="Xamarin.DataAnnotationsReflection.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MyViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center" Margin="50">
+        <Label Text="Welcome to Xamarin.Forms!" />
+        <Grid>
+            <Grid BackgroundColor="Red" IsVisible="{Binding HasErrors}"></Grid>
+            <Entry Text="{Binding MyTextEntry, Mode=TwoWay}" Margin="5"/>
+        </Grid>
+        <Button Text="Submit" Clicked="Submit_Click" />
+    </StackLayout>
+
+</ContentPage>
